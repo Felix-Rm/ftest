@@ -1,9 +1,12 @@
+cmake_minimum_required(VERSION 3.0)
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++17 -Wall")
+set_property(GLOBAL PROPERTY CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CXX_STANDARD 17)
+set(GCC_COVERAGE_COMPILE_FLAGS "-std=17")
+
+if(NOT TARGET ftest)
 
 project(ftest)
-include_directories("./")
 
 add_library(ftest test_logging.cpp)
 
@@ -15,3 +18,5 @@ install(DIRECTORY "${CMAKE_SOURCE_DIR}/" #source directory
         PATTERN "build" EXCLUDE
         PATTERN ".*" EXCLUDE
         PATTERN "**CMakeFiles**" EXCLUDE)
+
+endif()
