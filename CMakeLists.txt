@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
 set_property(GLOBAL PROPERTY CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CXX_STANDARD 17)
-set(GCC_COVERAGE_COMPILE_FLAGS "-std=17")
 
 if(NOT TARGET ftest)
 
